@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Crms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @crms.each do |crm| %>
+      <tr>
+        <td><%= crm.name %></td>
+        <td><%= crm.type %></td>
+        <td><%= link_to 'Show', crm %></td>
+        <td><%= link_to 'Edit', edit_crm_path(crm) %></td>
+        <td><%= link_to 'Destroy', crm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Crm', new_crm_path %>
